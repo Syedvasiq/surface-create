@@ -6,6 +6,7 @@ import IntegratedSystems from "@/components/IntegratedSystems";
 import ServicesSection from "@/components/ServicesSection";
 import IndoorOutdoorServices from "@/components/IndoorOutdoorServices";
 import RenovationBeforeAfter from "@/components/RenovationBeforeAfter";
+import ProjectStartCTA from "@/components/ProjectStartCTA";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -26,6 +27,7 @@ export default function Home() {
       <ServicesSection />
       <IndoorOutdoorServices />
       <RenovationBeforeAfter />
+      <ProjectStartCTA />
     </main>
   );
 }

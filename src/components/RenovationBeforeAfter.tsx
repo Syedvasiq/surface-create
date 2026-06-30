@@ -43,7 +43,7 @@ export default function RenovationBeforeAfter() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-white mx-[15px] mt-[15px] mb-[5px]"
+      className="relative bg-white mx-[15px] mt-[15px] mb-[5px] pb-16"
       style={{ height: "220vh" }}
     >
       <div className="sticky top-0 h-screen w-full flex flex-col md:flex-row overflow-hidden">
