@@ -83,7 +83,7 @@ export default function HeroSlider() {
   const slide = slides[current];
 
   return (
-    <section className="relative h-[92vh] min-h-[540px] w-full overflow-hidden bg-black mx-[15px]" style={{ width: "calc(100% - 30px)" }}>
+    <section className="relative h-[92vh] min-h-[540px] w-full overflow-hidden bg-black md:mx-[15px] md:[width:calc(100%-30px)]">
       {/* Background Images */}
       {slides.map((s, i) => (
         <div

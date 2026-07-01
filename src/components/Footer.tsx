@@ -138,8 +138,8 @@ export default function Footer() {
             <Link href="/" className="shrink-0">
               <div className="relative h-[130px] w-[130px]">
                 <Image
-                  src="/footer-logo@4x.png"
-                  alt="Ideal Work"
+                  src="/surface-create-footer-logo.png"
+                  alt="Surface Create"
                   fill
                   className="object-contain"
                   sizes="130px"

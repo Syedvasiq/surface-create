@@ -80,13 +80,13 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white">
-      <div className="mx-auto flex h-[105px] max-w-[1440px] items-center px-6">
+      <div className="mx-auto flex h-[60px] md:h-[105px] max-w-[1440px] items-center px-4 md:px-6">
 
         {/* Logo — 130×130 */}
         <Link href="/" className="mr-10 shrink-0">
-          <div className="relative h-[94px] w-[94px]">
+          <div className="relative h-[36px] w-[36px] md:h-[60px] md:w-[60px] lg:h-[94px] lg:w-[94px]">
             <Image
-              src="/logo.png"
+              src="/surface-create-logo.png"
               alt="Surface Create Logo"
               fill
               className="object-contain"

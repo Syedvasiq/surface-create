@@ -80,7 +80,7 @@ export default function IntegratedSystems() {
   };
 
   return (
-    <section className="mx-[15px] mt-[15px] mb-[5px] bg-[#0d0d0d] py-12 px-6 lg:px-12">
+    <section className="md:mx-[15px] mt-[15px] mb-[5px] bg-[#0d0d0d] py-12 px-6 lg:px-12">
 
       {/* Header */}
       <div className="w-full mb-8 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">

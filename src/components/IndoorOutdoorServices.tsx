@@ -11,26 +11,26 @@ import Link from "next/link";
 */
 export default function IndoorOutdoorServices() {
   return (
-    <section className="relative bg-[#f0ece6] mx-[15px] mt-[15px] mb-[5px]">
+    <section className="relative bg-[#f0ece6] md:mx-[15px] mt-[15px] mb-[5px]">
 
-      {/* ── INDOOR — sticky, pinned while outdoor scrolls over ── */}
-      <div className="sticky top-0 z-0 h-screen w-full flex flex-col md:flex-row overflow-hidden">
+      {/* ── INDOOR ── */}
+      <div className="sticky top-0 z-0 h-auto md:h-screen w-full flex flex-col md:flex-row overflow-hidden">
 
         {/* Image — left */}
-        <div className="relative w-full md:w-1/2 h-1/2 md:h-full order-1">
+        <div className="relative w-full md:w-1/2 h-[40vh] md:h-full order-1">
           <Image
             src="/images/projects/indoor-microcement.jpg"
             alt="Indoor Microcement Finish"
             fill
             className="object-cover"
             priority
-            sizes="50vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-black/10" />
         </div>
 
         {/* Content — right */}
-        <div className="relative w-full md:w-1/2 h-1/2 md:h-full order-2 flex flex-col justify-center px-8 sm:px-14 lg:px-20 bg-[#f0ece6]">
+        <div className="relative w-full md:w-1/2 h-auto md:h-full order-2 flex flex-col justify-center px-6 sm:px-14 lg:px-20 py-8 md:py-0 bg-[#f0ece6]">
           <p className="text-xs tracking-widest text-gray-500 uppercase mb-4">
             Indoor Surfaces
           </p>
@@ -86,11 +86,11 @@ export default function IndoorOutdoorServices() {
         </div>
       </div>
 
-      {/* ── OUTDOOR — scrolls up and over the indoor section, then pins while pool scrolls over ── */}
-      <div className="sticky top-0 z-10 h-screen w-full flex flex-col md:flex-row overflow-hidden shadow-[0_-20px_60px_rgba(0,0,0,0.3)] bg-[#2b2b28]">
+      {/* ── OUTDOOR ── */}
+      <div className="sticky top-0 z-10 h-auto md:h-screen w-full flex flex-col md:flex-row overflow-hidden shadow-[0_-20px_60px_rgba(0,0,0,0.3)] bg-[#2b2b28]">
 
         {/* Content — left */}
-        <div className="relative w-full md:w-1/2 h-1/2 md:h-full order-2 md:order-1 flex flex-col justify-center px-8 sm:px-14 lg:px-20 bg-[#2b2b28]">
+        <div className="relative w-full md:w-1/2 h-auto md:h-full order-2 md:order-1 flex flex-col justify-center px-6 sm:px-14 lg:px-20 py-8 md:py-0 bg-[#2b2b28]">
           <p className="text-xs tracking-widest text-gray-400 uppercase mb-4">
             Outdoor Surfaces
           </p>
@@ -145,23 +145,23 @@ export default function IndoorOutdoorServices() {
         </div>
 
         {/* Image — right */}
-        <div className="relative w-full md:w-1/2 h-1/2 md:h-full order-1 md:order-2">
+        <div className="relative w-full md:w-1/2 h-[40vh] md:h-full order-1 md:order-2">
           <Image
             src="/images/projects/outdoor-microcement.jpg"
             alt="Outdoor Microcement Finish"
             fill
             className="object-cover"
-            sizes="50vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-black/15" />
         </div>
       </div>
 
-      {/* ── SWIMMING POOL — scrolls up and over the outdoor section ── */}
-      <div className="relative z-20 h-screen w-full flex flex-col md:flex-row overflow-hidden shadow-[0_-20px_60px_rgba(0,0,0,0.3)] bg-[#0e2a2a]">
+      {/* ── SWIMMING POOL ── */}
+      <div className="relative z-20 h-auto md:h-screen w-full flex flex-col md:flex-row overflow-hidden shadow-[0_-20px_60px_rgba(0,0,0,0.3)] bg-[#0e2a2a]">
 
-        {/* Content — left */}
-        <div className="relative w-full md:w-1/2 h-1/2 md:h-full order-2 md:order-2 flex flex-col justify-center px-8 sm:px-14 lg:px-20 bg-[#0e2a2a]">
+        {/* Content — right */}
+        <div className="relative w-full md:w-1/2 h-auto md:h-full order-2 flex flex-col justify-center px-6 sm:px-14 lg:px-20 py-8 md:py-0 bg-[#0e2a2a]">
           <p className="text-xs tracking-widest text-teal-400/70 uppercase mb-4">
             Pool Surfaces
           </p>
@@ -215,13 +215,13 @@ export default function IndoorOutdoorServices() {
         </div>
 
         {/* Image — left */}
-        <div className="relative w-full md:w-1/2 h-1/2 md:h-full order-1 md:order-1">
+        <div className="relative w-full md:w-1/2 h-[40vh] md:h-full order-1">
           <Image
             src="/images/projects/swimming-pool-outdoor.jpg"
             alt="Swimming Pool Microcement Finish"
             fill
             className="object-cover"
-            sizes="50vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-black/15" />
         </div>

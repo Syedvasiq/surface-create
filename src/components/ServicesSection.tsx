@@ -201,7 +201,7 @@ function ImageCard({ service }: { service: Service }) {
               alt={service.projectTitle}
               fill
               className="object-cover"
-              sizes="50vw"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           ) : (
             <div className="w-full h-full bg-stone-300 flex items-center justify-center">
@@ -228,7 +228,7 @@ function ImageCard({ service }: { service: Service }) {
 ───────────────────────────────────────────── */
 function InfoPanel({ service }: { service: Service }) {
   return (
-    <div className="w-full h-full flex flex-col justify-center px-10 sm:px-14 lg:px-16 bg-[#f0ece6]">
+    <div className="w-full h-full flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-8 md:py-0 bg-[#f0ece6]">
       {service.category && (
         <p className="text-[11px] tracking-widest text-gray-500 uppercase mb-3">
           {service.category}
@@ -280,7 +280,7 @@ function ProductPanel({ service }: { service: Service }) {
           alt={service.productName}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-700"
-          sizes="25vw"
+          sizes="(max-width: 768px) 100vw, 25vw"
         />
       ) : (
         <div className="w-full h-full bg-stone-200" />
@@ -303,51 +303,58 @@ function ProductPanel({ service }: { service: Service }) {
 ───────────────────────────────────────────── */
 export default function ServicesSection() {
   return (
-    <section className="mx-[15px] mt-[15px] mb-[5px] bg-[#f0ece6] flex flex-col gap-[6px] py-[15px] px-[15px]">
+    <section className="md:mx-[15px] mt-[15px] mb-[5px] bg-[#f0ece6] flex flex-col gap-[6px] py-[15px]">
       {services.map((service) => {
         const hasProduct = !!service.productName;
         const isTextLeft = service.layout === "text-left";
-        const rowHeight = "clamp(380px, 42vw, 500px)";
 
         return (
           <div
             key={service.id}
             className="flex flex-col md:flex-row w-full gap-[6px] overflow-hidden"
-            style={{ height: rowHeight }}
+            style={{ minHeight: 0 }}
           >
+            {/* ── MOBILE: always Image first, then Info, then Product (if any) ──
+                ── DESKTOP: honours isTextLeft / isTextRight layout ── */}
+
             {isTextLeft ? (
               <>
-                {/* Info panel — left */}
-                <div className="w-full md:w-[38%] shrink-0 min-h-[220px] md:min-h-0">
+                {/* Info — desktop left / mobile second */}
+                <div className="w-full md:w-[38%] shrink-0 order-2 md:order-1 min-h-[280px] md:min-h-0 md:h-[clamp(380px,42vw,500px)]">
                   <InfoPanel service={service} />
                 </div>
-                {hasProduct ? (
-                  <>
-                    <div className="w-full md:w-[40%] relative shrink-0 min-h-[220px] md:min-h-0">
-                      <ImageCard service={service} />
-                    </div>
-                    <div className="w-full md:w-[22%] relative shrink-0 min-h-[180px] md:min-h-0">
-                      <ProductPanel service={service} />
-                    </div>
-                  </>
-                ) : (
-                  <div className="w-full md:w-[62%] relative min-h-[260px] md:min-h-0">
-                    <ImageCard service={service} />
+
+                {/* Image — desktop centre-right / mobile first */}
+                <div
+                  className={`w-full relative order-1 md:order-2 h-[56vw] md:h-[clamp(380px,42vw,500px)] ${
+                    hasProduct ? "md:w-[40%]" : "md:w-[62%]"
+                  }`}
+                >
+                  <ImageCard service={service} />
+                </div>
+
+                {/* Product — desktop far-right / mobile third */}
+                {hasProduct && (
+                  <div className="w-full md:w-[22%] relative shrink-0 order-3 h-[56vw] md:h-[clamp(380px,42vw,500px)]">
+                    <ProductPanel service={service} />
                   </div>
                 )}
               </>
             ) : (
               <>
-                {/* Image — left */}
-                <div className="w-full md:w-[62%] relative min-h-[260px] md:min-h-0 order-2 md:order-1">
+                {/* Image — desktop left / mobile first */}
+                <div className="w-full md:w-[62%] relative order-1 h-[56vw] md:h-[clamp(380px,42vw,500px)]">
                   <ImageCard service={service} />
                 </div>
+
+                {/* Product panel (if any) — desktop right / mobile second */}
                 {hasProduct ? (
-                  <div className="w-full md:w-[38%] relative shrink-0 min-h-[220px] md:min-h-0 order-1 md:order-2">
+                  <div className="w-full md:w-[38%] relative shrink-0 order-2 h-[56vw] md:h-[clamp(380px,42vw,500px)]">
                     <ProductPanel service={service} />
                   </div>
                 ) : (
-                  <div className="w-full md:w-[38%] shrink-0 min-h-[220px] md:min-h-0 order-1 md:order-2">
+                  /* Info — desktop right / mobile second */
+                  <div className="w-full md:w-[38%] shrink-0 order-2 min-h-[280px] md:min-h-0 md:h-[clamp(380px,42vw,500px)]">
                     <InfoPanel service={service} />
                   </div>
                 )}
@@ -359,4 +366,3 @@ export default function ServicesSection() {
     </section>
   );
 }
-

@@ -1,7 +1,7 @@
 export default function ArtOfHarmony() {
   return (
     <section
-      className="relative mx-[15px] mt-[15px] mb-[5px] overflow-hidden py-[5px]"
+      className="relative md:mx-[15px] mt-[15px] mb-[5px] overflow-hidden py-[5px]"
       style={{ height: "580px" }}
     >
       {/* Background video */}
@@ -27,7 +27,7 @@ export default function ArtOfHarmony() {
         </p>
 
         {/* Main heading */}
-        <h2 className="mb-4 text-[48px] font-light leading-tight text-white tracking-tight max-w-xl">
+        <h2 className="mb-4 text-[32px] sm:text-[48px] font-light leading-tight text-white tracking-tight max-w-xl">
           The art of harmony
         </h2>
 
