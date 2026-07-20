@@ -39,7 +39,7 @@ export default function NuvolatoContinuousSpace() {
 
         <div className="w-full md:w-[62%] relative aspect-[4/3] md:aspect-auto md:h-[420px] lg:h-[500px] overflow-hidden">
           <Image
-            src="/nuvolato-exterior.jpg"
+            src="/images/nuvolato/nuvolato-image.jpg"
             alt="Nuvolato Architop surface finish"
             fill
             className="object-cover"

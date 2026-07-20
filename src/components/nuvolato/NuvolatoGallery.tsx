@@ -3,7 +3,12 @@
 import ImageSlider from "@/components/ImageSlider";
 import { useEffect, useState } from "react";
 
-const images = Array.from({ length: 10 }, (_, i) => `/slider/slider-${i + 1}.jpg`);
+const images = [
+  "/images/nuvolato/gallery-1.jpg",
+  "/images/nuvolato/gallery-2.jpg",
+  "/images/nuvolato/gallery-3.jpg",
+  "/images/nuvolato/gallery-4.jpg",
+];
 
 export default function NuvolatoGallery() {
   const [visibleCount, setVisibleCount] = useState(3);

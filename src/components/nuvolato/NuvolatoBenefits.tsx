@@ -1,7 +1,7 @@
 const benefits = [
   {
     title: "No removal",
-    description: "Applied directly over existing surfaces — no demolition, no mess, no disruption.",
+    description: "The floor can be restored without removal, fast and clean process.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-10 h-10">
         <line x1="8" y1="40" x2="40" y2="8" strokeLinecap="round" />
@@ -12,19 +12,33 @@ const benefits = [
     ),
   },
   {
-    title: "Minimal depth",
-    description: "Ultra-thin application with no change in floor level.",
+    title: "Power trowel effect",
+    description: "Minimal thickness, no change in slab level.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-10 h-10">
-        <line x1="12" y1="10" x2="36" y2="10" strokeLinecap="round" />
-        <line x1="24" y1="10" x2="24" y2="38" strokeLinecap="round" />
-        <polyline points="18,32 24,38 30,32" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="8" y="20" width="32" height="8" rx="1" />
+        <line x1="24" y1="8" x2="24" y2="20" strokeLinecap="round" />
+        <line x1="18" y1="12" x2="24" y2="8" strokeLinecap="round" />
+        <line x1="30" y1="12" x2="24" y2="8" strokeLinecap="round" />
+        <line x1="12" y1="28" x2="12" y2="38" strokeLinecap="round" />
+        <line x1="24" y1="28" x2="24" y2="38" strokeLinecap="round" />
+        <line x1="36" y1="28" x2="36" y2="38" strokeLinecap="round" />
       </svg>
     ),
   },
   {
-    title: "Seamless finish",
-    description: "Continuous joint-free surface across floors and walls with no interruptions.",
+    title: "Speed of laying",
+    description: "Fast application process.",
+    icon: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-10 h-10">
+        <circle cx="24" cy="24" r="16" />
+        <polyline points="24,14 24,24 32,28" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "No joints",
+    description: "It can be applied without limits or interruptions, depending on the existing surface.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-10 h-10">
         <rect x="6" y="6" width="16" height="16" rx="1" />
@@ -35,24 +49,12 @@ const benefits = [
     ),
   },
   {
-    title: "Cloud effect",
-    description: "Distinctive nuvolato (cloud) aesthetic with natural depth and organic variation.",
+    title: "High wear resistance",
+    description: "Alta resistenza all'usura.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-10 h-10">
-        <path d="M10 34 Q8 28 14 26 Q12 18 20 18 Q22 12 30 14 Q36 10 38 18 Q44 20 42 28 Q44 34 38 34 Z" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    title: "Custom finishes",
-    description: "Wide colour palette with matte, satin and gloss sealer options.",
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-10 h-10">
-        <path d="M24 24 L10 14 A16 16 0 0 1 24 8 Z" />
-        <path d="M24 24 L38 14 A16 16 0 0 0 24 8 Z" />
-        <path d="M24 24 L10 34 A16 16 0 0 0 24 40 Z" />
-        <path d="M24 24 L38 34 A16 16 0 0 1 24 40 Z" />
-        <circle cx="24" cy="24" r="4" fill="currentColor" stroke="none" />
+        <path d="M24 6 L38 18 L38 36 Q24 44 10 36 L10 18 Z" strokeLinejoin="round" />
+        <polyline points="17,24 22,29 31,19" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },
@@ -73,12 +75,8 @@ export default function NuvolatoBenefits() {
               {b.icon}
             </div>
             <div>
-              <p className="text-[15px] font-semibold text-gray-900 mb-1">
-                {b.title}
-              </p>
-              <p className="text-[14px] text-gray-600 leading-relaxed max-w-xl">
-                {b.description}
-              </p>
+              <p className="text-[15px] font-semibold text-gray-900 mb-1">{b.title}</p>
+              <p className="text-[14px] text-gray-600 leading-relaxed max-w-xl">{b.description}</p>
             </div>
           </div>
         ))}
