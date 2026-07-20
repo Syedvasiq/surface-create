@@ -8,14 +8,14 @@ const footerColumns = [
     heading: "Floors",
     links: [
       "Solidro",
-      "Microtopping®",
-      "Nuvolato Architop®",
-      "Lixio®",
-      "Lixio®+",
+      "Microtopping",
+      "Nuvolato Architop",
+      "Lixio",
+      "Lixio+",
       "Acid-Stain",
       "Stamped Concrete",
-      "Rasico®",
-      "Sassoitalia® Floor",
+      "Rasico",
+      "Sassoitalia Floor",
       "Stenciltop floor",
     ],
   },
@@ -23,7 +23,7 @@ const footerColumns = [
     heading: "Walls",
     links: [
       "Solidro",
-      "Microtopping®",
+      "Microtopping",
       "Concrete Optik",
       "Purometallo",
       "Ideal Wall",
@@ -68,14 +68,7 @@ const footerColumns = [
   },
   {
     heading: "Colours",
-    links: [
-      "The art of harmony",
-      "Yellow",
-      "Orange",
-      "Red",
-      "Blue",
-      "Green",
-    ],
+    links: ["The art of harmony", "Yellow", "Orange", "Red", "Blue", "Green"],
   },
 ];
 
@@ -130,16 +123,14 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="bg-[#1e2025] text-white">
-      {/* Top bar: logo + address + socials */}
       <div className="mx-auto max-w-[1440px] px-6 py-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          {/* Logo + Address */}
           <div className="flex items-center gap-6">
             <Link href="/" className="shrink-0">
               <div className="relative h-[130px] w-[130px]">
                 <Image
-                  src="/surface-create-footer-logo.png"
-                  alt="Surface Create"
+                  src="/surface-crete-footer-logo.png"
+                  alt="Surface Crete"
                   fill
                   className="object-contain"
                   sizes="130px"
@@ -148,19 +139,12 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-[13px] text-gray-300">
-              Surface Kreate, No. 42, MG Road, Bengaluru, Karnataka 560001, India
+              Surface Crete, No. 42, MG Road, Bengaluru, Karnataka 560001, India
             </p>
           </div>
-
-          {/* Social Icons */}
           <div className="flex items-center gap-5">
             {socialLinks.map((s) => (
-              <Link
-                key={s.label}
-                href={s.href}
-                aria-label={s.label}
-                className="text-gray-300 transition-colors hover:text-white"
-              >
+              <Link key={s.label} href={s.href} aria-label={s.label} className="text-gray-300 transition-colors hover:text-white">
                 {s.icon}
               </Link>
             ))}
@@ -168,27 +152,18 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Divider */}
       <div className="mx-auto max-w-[1440px] border-t border-gray-600 px-6" />
 
-      {/* Nav columns */}
       <div className="mx-auto max-w-[1440px] px-6 py-10">
         <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8">
           {footerColumns.map((col) => (
             <div key={col.heading} className="flex flex-col gap-3">
-              <h3 className="text-[13px] font-bold uppercase tracking-wide text-white">
-                {col.heading}
-              </h3>
-              {col.divider && (
-                <div className="mb-1 border-t border-gray-500" />
-              )}
+              <h3 className="text-[13px] font-bold uppercase tracking-wide text-white">{col.heading}</h3>
+              {col.divider && <div className="mb-1 border-t border-gray-500" />}
               <ul className="flex flex-col gap-2">
                 {col.links.map((link) => (
                   <li key={link}>
-                    <Link
-                      href="#"
-                      className="text-[13px] text-gray-400 transition-colors hover:text-white"
-                    >
+                    <Link href="#" className="text-[13px] text-gray-400 transition-colors hover:text-white">
                       {link}
                     </Link>
                   </li>
@@ -199,22 +174,15 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom copyright bar */}
       <div className="border-t border-gray-700">
         <div className="mx-auto max-w-[1440px] px-6 py-5">
           <p className="text-center text-[11px] leading-relaxed text-gray-400">
-            © 2024 – 2025 – Surface Kreate – No. 42, MG Road, Bengaluru, Karnataka 560001, India –{" "}
-            <Link href="#" className="underline hover:text-white">
-              Data Privacy
-            </Link>{" "}
-            –{" "}
-            <Link href="#" className="underline hover:text-white">
-              Cookie Policy
-            </Link>{" "}
-            –{" "}
-            <Link href="#" className="underline hover:text-white">
-              #DMIND
-            </Link>
+            &copy; 2024 &ndash; 2025 &ndash; Surface Crete &ndash; No. 42, MG Road, Bengaluru, Karnataka 560001, India &ndash;{" "}
+            <Link href="#" className="underline hover:text-white">Data Privacy</Link>{" "}
+            &ndash;{" "}
+            <Link href="#" className="underline hover:text-white">Cookie Policy</Link>{" "}
+            &ndash;{" "}
+            <Link href="#" className="underline hover:text-white">#DMIND</Link>
           </p>
         </div>
       </div>

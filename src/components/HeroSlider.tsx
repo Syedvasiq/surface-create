@@ -9,7 +9,7 @@ const slides = [
     smallHeading: "Premium Decorative Surface Solutions",
     mainHeading: "Transform Everyday Interiors Into Timeless Luxury",
     description:
-      "Create sophisticated living spaces with seamless Microcement, Decorative Concrete, Polished Concrete and Textured Wall Finishes. Surface Kreate brings premium European-inspired surface solutions to apartments, villas and luxury residences across India.",
+      "Create sophisticated living spaces with seamless Microcement, Decorative Concrete, Polished Concrete and Textured Wall Finishes. Surface Crete brings premium European-inspired surface solutions to apartments, villas and luxury residences across India.",
     cta: "Get Free Consultation",
     visitLine: "Visit the line",
     visitLabel: "Microcement",
@@ -83,7 +83,7 @@ export default function HeroSlider() {
   const slide = slides[current];
 
   return (
-    <section className="relative h-[92vh] min-h-[540px] w-full overflow-hidden bg-black md:mx-[15px] md:[width:calc(100%-30px)]">
+    <section className="relative h-[69vh] min-h-[405px] md:h-[92vh] md:min-h-[540px] w-full overflow-hidden bg-black md:mx-[15px] md:[width:calc(100%-30px)]">
       {/* Background Images */}
       {slides.map((s, i) => (
         <div
@@ -172,3 +172,4 @@ export default function HeroSlider() {
     </section>
   );
 }
+

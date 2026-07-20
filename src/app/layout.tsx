@@ -9,27 +9,27 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://surfacecreate.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://surfacecrete.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Surface Create",
-    template: "%s | Surface Create",
+    default: "Surface Crete",
+    template: "%s | Surface Crete",
   },
   description:
-    "Surface Create — premium creative surfaces, designs, and materials for your next project.",
-  keywords: ["surface create", "creative surfaces", "design materials"],
-  authors: [{ name: "Surface Create" }],
-  creator: "Surface Create",
+    "Surface Crete — premium decorative surface solutions including Microcement, Decorative Concrete and Polished Concrete across India.",
+  keywords: ["surface crete", "microcement india", "decorative concrete", "polished concrete"],
+  authors: [{ name: "Surface Crete" }],
+  creator: "Surface Crete",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: "Surface Create",
-    title: "Surface Create",
+    siteName: "Surface Crete",
+    title: "Surface Crete",
     description:
-      "Surface Create — premium creative surfaces, designs, and materials for your next project.",
+      "Surface Crete — premium decorative surface solutions including Microcement, Decorative Concrete and Polished Concrete across India.",
     images: [
       {
         url: "/og-image.jpg",
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Surface Create",
+    title: "Surface Crete",
     description:
-      "Surface Create — premium creative surfaces, designs, and materials for your next project.",
+      "Surface Crete — premium decorative surface solutions including Microcement, Decorative Concrete and Polished Concrete across India.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -79,3 +79,4 @@ export default function RootLayout({
     </html>
   );
 }
+

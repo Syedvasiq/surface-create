@@ -23,7 +23,7 @@ export default function ArtOfHarmony() {
 
         {/* Eyebrow */}
         <p className="mb-4 text-[11px] uppercase tracking-[0.2em] font-semibold text-white/70">
-          Surface Create · Colour Collection
+          Surface Crete · Colour Collection
         </p>
 
         {/* Main heading */}
@@ -74,3 +74,4 @@ export default function ArtOfHarmony() {
     </section>
   );
 }
+

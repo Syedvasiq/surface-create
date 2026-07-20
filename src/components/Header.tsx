@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 
-// ─── Mega menu data ───────────────────────────────────────────────────────────
 const floorsMegaMenu = [
   {
     groupTitle: "Cement-based",
@@ -62,7 +61,6 @@ export default function Header() {
   const floorsRef = useRef<HTMLDivElement>(null);
   const megaRef = useRef<HTMLDivElement>(null);
 
-  // Close mega menu when clicking outside
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (
@@ -72,22 +70,19 @@ export default function Header() {
         setMegaOpen(false);
       }
     }
-    if (megaOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
+    if (megaOpen) document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [megaOpen]);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white">
-      <div className="mx-auto flex h-[60px] md:h-[105px] max-w-[1440px] items-center px-4 md:px-6">
+      <div className="mx-auto flex h-[56px] md:h-[105px] max-w-[1440px] items-center px-4 md:px-6">
 
-        {/* Logo — 130×130 */}
         <Link href="/" className="mr-10 shrink-0">
-          <div className="relative h-[36px] w-[36px] md:h-[60px] md:w-[60px] lg:h-[94px] lg:w-[94px]">
+          <div className="relative h-[48px] w-[48px] md:h-[60px] md:w-[60px] lg:h-[94px] lg:w-[94px]">
             <Image
-              src="/surface-create-logo.png"
-              alt="Surface Create Logo"
+              src="/surface-crete-logo.png"
+              alt="Surface Crete Logo"
               fill
               className="object-contain"
               sizes="130px"
@@ -96,7 +91,6 @@ export default function Header() {
           </div>
         </Link>
 
-        {/* Desktop Nav — shifted 20px right, 2px extra gap, weight 600 */}
         <nav className="hidden lg:flex flex-1 items-center gap-[30px] ml-[20px]">
           {navLinks.map((link) =>
             link.hasMega ? (
@@ -122,34 +116,23 @@ export default function Header() {
           )}
         </nav>
 
-        {/* Right: Contacts + Language + Search */}
         <div className="hidden lg:flex ml-6 shrink-0 items-center gap-5">
-          <Link
-            href="/contacts"
-            className="cursor-pointer text-[14px] font-semibold text-gray-900 hover:text-gray-600"
-          >
+          <Link href="/contacts" className="cursor-pointer text-[14px] font-semibold text-gray-900 hover:text-gray-600">
             Contacts
           </Link>
-
           <button className="cursor-pointer flex items-center gap-[2px] text-[14px] font-semibold text-gray-900 hover:text-gray-600">
             EN
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="mt-[2px] h-3 w-3">
               <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
             </svg>
           </button>
-
-          <button
-            onClick={() => setSearchOpen((v) => !v)}
-            aria-label="Search"
-            className="cursor-pointer text-gray-900 hover:text-gray-600"
-          >
+          <button onClick={() => setSearchOpen((v) => !v)} aria-label="Search" className="cursor-pointer text-gray-900 hover:text-gray-600">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="h-5 w-5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1010.5 18a7.5 7.5 0 006.15-3.15z" />
             </svg>
           </button>
         </div>
 
-        {/* Mobile: Search + Hamburger */}
         <div className="ml-auto flex lg:hidden items-center gap-4">
           <button onClick={() => setSearchOpen((v) => !v)} aria-label="Search" className="cursor-pointer text-gray-900">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="h-5 w-5">
@@ -174,44 +157,25 @@ export default function Header() {
         </div>
       </div>
 
-      {/* ── Floors Mega Menu — opens on click, aligned from Floors nav item ── */}
       {megaOpen && (
-        <div
-          ref={megaRef}
-          className="hidden lg:block absolute left-0 right-0 z-40 border-t border-gray-200 bg-white shadow-sm"
-        >
-          {/* Inner wrapper: same max-width and px as the header bar */}
+        <div ref={megaRef} className="hidden lg:block absolute left-0 right-0 z-40 border-t border-gray-200 bg-white shadow-sm">
           <div className="mx-auto max-w-[1440px] px-6 py-6">
-            {/*
-              The nav starts after the logo (logo = 75px + mr-10 = 75+40 = 115px).
-              We push the menu content to align with the "Floors" nav item start.
-            */}
             <div className="pl-[170px]">
               <div className="flex gap-16">
                 {floorsMegaMenu.map((group) => (
                   <div key={group.groupTitle}>
-                    {/* Group title + horizontal rule */}
                     <div className="mb-3 flex items-center gap-3">
-                      <span className="text-[16px] font-bold text-gray-900 whitespace-nowrap">
-                        {group.groupTitle}
-                      </span>
+                      <span className="text-[16px] font-bold text-gray-900 whitespace-nowrap">{group.groupTitle}</span>
                       <span className="w-16 border-t border-gray-300" />
                     </div>
-                    {/* Columns */}
                     <div className="flex gap-10">
                       {group.columns.map((col) => (
                         <div key={col.subLabel} className="min-w-[130px]">
-                          <p className="mb-2 text-[10px] font-semibold uppercase tracking-widest text-gray-400">
-                            {col.subLabel}
-                          </p>
+                          <p className="mb-2 text-[10px] font-semibold uppercase tracking-widest text-gray-400">{col.subLabel}</p>
                           <ul className="flex flex-col gap-2">
                             {col.items.map((item) => (
                               <li key={item.label}>
-                                <Link
-                                  href={item.href}
-                                  onClick={() => setMegaOpen(false)}
-                                  className="cursor-pointer text-[14px] font-bold text-gray-700 hover:text-gray-900 transition-colors"
-                                >
+                                <Link href={item.href} onClick={() => setMegaOpen(false)} className="cursor-pointer text-[14px] font-bold text-gray-700 hover:text-gray-900 transition-colors">
                                   {item.label}
                                 </Link>
                               </li>
@@ -228,19 +192,17 @@ export default function Header() {
         </div>
       )}
 
-      {/* Search Bar */}
       {searchOpen && (
         <div className="border-t border-gray-200 bg-white px-6 py-3">
           <input
             autoFocus
             type="text"
-            placeholder="Search…"
+            placeholder="Search..."
             className="w-full border-b border-gray-300 pb-1 text-[14px] text-gray-800 outline-none placeholder:text-gray-400 focus:border-gray-900"
           />
         </div>
       )}
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-gray-200 bg-white max-h-[80vh] overflow-y-auto scrollbar-hide">
           <nav className="flex flex-col px-6 py-4 gap-1">
@@ -293,11 +255,7 @@ export default function Header() {
               )
             ))}
             <div className="flex items-center justify-between pt-3">
-              <Link
-                href="/contacts"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-[15px] font-semibold text-gray-900"
-              >
+              <Link href="/contacts" onClick={() => setMobileMenuOpen(false)} className="text-[15px] font-semibold text-gray-900">
                 Contacts
               </Link>
               <button className="flex items-center gap-[2px] text-[14px] font-semibold text-gray-900">

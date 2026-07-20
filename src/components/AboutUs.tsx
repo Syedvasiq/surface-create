@@ -8,7 +8,7 @@ export default function AboutUs() {
       {/* Top text block */}
       <div className="mb-10">
         <h2 className="mb-2 text-[32px] lg:text-[40px] font-light leading-tight text-gray-900 max-w-2xl">
-          Surface Kreate: seamless surfaces,{" "}
+          Surface Crete: seamless surfaces,{" "}
           <span className="italic">endless possibilities</span>
         </h2>
         <p className="text-[14px] text-gray-500 font-normal">
@@ -25,7 +25,7 @@ export default function AboutUs() {
           <div className="relative w-full" style={{ aspectRatio: "4/3" }}>
             <Image
               src="/images/about-us-section-image.jpg"
-              alt="Surface Kreate — premium microcement and decorative concrete surfaces"
+              alt="Surface Crete — premium microcement and decorative concrete surfaces"
               fill
               className="object-cover"
             />
@@ -37,7 +37,7 @@ export default function AboutUs() {
 
           {/* Lead paragraph */}
           <p className="mb-5 text-[18px] lg:text-[20px] font-light leading-relaxed text-gray-900">
-            <strong className="font-semibold">Surface Kreate</strong> interprets{" "}
+            <strong className="font-semibold">Surface Crete</strong> interprets{" "}
             <sup className="text-[12px] font-normal text-gray-500">microcement</sup>{" "}
             as a creative, versatile and elegant material, perfect for crafting seamless floors,
             walls and surfaces that retain their beauty across decades.
@@ -48,7 +48,7 @@ export default function AboutUs() {
 
           {/* Body paragraph */}
           <p className="mb-6 text-[14px] leading-relaxed text-gray-600">
-            This is <strong className="font-semibold text-gray-800">Surface Kreate&apos;s philosophy</strong> — the synthesis
+            This is <strong className="font-semibold text-gray-800">Surface Crete&apos;s philosophy</strong> — the synthesis
             of European design expertise and deep knowledge of materials, technologies and finishing
             systems. From raw material to the final installation, we maintain complete and rigorous
             quality control, supported by a skilled team and a wide network of trained applicators
@@ -67,7 +67,7 @@ export default function AboutUs() {
             Our surfaces are engineered to adapt, equally at home on floors, walls, ceilings
             and furniture, offering a continuous visual language throughout any space. With
             minimal maintenance requirements and outstanding resistance to moisture, heat and
-            daily wear, Surface Kreate finishes are built to perform as beautifully as they look,
+            daily wear, Surface Crete finishes are built to perform as beautifully as they look,
             year after year.
           </p>
 
@@ -103,3 +103,4 @@ export default function AboutUs() {
     </section>
   );
 }
+
