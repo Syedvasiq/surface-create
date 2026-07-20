@@ -27,7 +27,6 @@ export default function NuvolatoHow() {
             sizes="(min-width: 1024px) 52vw, 100vw"
           />
           <div className="text-[#1d2830]">
-            <h3 className="mb-5 text-xl font-semibold">Nuvolato Architop Floor</h3>
             <ol className="space-y-4 text-[17px] leading-snug sm:text-lg">
               {steps.map((step, i) => (
                 <li key={i} className="flex gap-1.5">

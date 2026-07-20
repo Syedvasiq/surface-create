@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 type Swatch = { code: string; name: string; tone: string };
 
@@ -44,6 +44,26 @@ const colourFamilies: { name: string; swatches: Swatch[] }[] = [
 
 export default function NuvolatoFeatures() {
   const sliderRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [overflows, setOverflows] = useState<boolean[]>(colourFamilies.map(() => true));
+
+  useEffect(() => {
+    const observers: ResizeObserver[] = [];
+    sliderRefs.current.forEach((el, i) => {
+      if (!el) return;
+      const check = () => {
+        setOverflows((prev) => {
+          const next = [...prev];
+          next[i] = el.scrollWidth > el.clientWidth;
+          return next;
+        });
+      };
+      check();
+      const ro = new ResizeObserver(check);
+      ro.observe(el);
+      observers.push(ro);
+    });
+    return () => observers.forEach((ro) => ro.disconnect());
+  }, []);
 
   const scrollFamily = (index: number, direction: 1 | -1) => {
     sliderRefs.current[index]?.scrollBy({ left: direction * 520, behavior: "smooth" });
@@ -64,10 +84,12 @@ export default function NuvolatoFeatures() {
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#5d686b]">Nuvolato Architop</p>
                   <h3 className="mt-1 text-[30px] font-light text-[#1d2830] sm:text-[36px]">{family.name}</h3>
                 </div>
-                <div className="flex gap-2">
-                  <button type="button" onClick={() => scrollFamily(familyIndex, -1)} className="grid h-9 w-9 place-items-center border border-[#1d2830]/40 text-lg text-[#1d2830] transition-colors hover:bg-[#1d2830] hover:text-white" aria-label={`Show previous ${family.name} colours`}>←</button>
-                  <button type="button" onClick={() => scrollFamily(familyIndex, 1)} className="grid h-9 w-9 place-items-center border border-[#1d2830]/40 text-lg text-[#1d2830] transition-colors hover:bg-[#1d2830] hover:text-white" aria-label={`Show next ${family.name} colours`}>→</button>
-                </div>
+                {overflows[familyIndex] && (
+                  <div className="hidden md:flex gap-2">
+                    <button type="button" onClick={() => scrollFamily(familyIndex, -1)} className="grid h-9 w-9 place-items-center border border-[#1d2830]/40 text-lg text-[#1d2830] transition-colors hover:bg-[#1d2830] hover:text-white" aria-label={`Show previous ${family.name} colours`}>←</button>
+                    <button type="button" onClick={() => scrollFamily(familyIndex, 1)} className="grid h-9 w-9 place-items-center border border-[#1d2830]/40 text-lg text-[#1d2830] transition-colors hover:bg-[#1d2830] hover:text-white" aria-label={`Show next ${family.name} colours`}>→</button>
+                  </div>
+                )}
               </div>
 
               <div ref={(element) => { sliderRefs.current[familyIndex] = element; }} className="mt-5 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-3 [scrollbar-width:thin]">

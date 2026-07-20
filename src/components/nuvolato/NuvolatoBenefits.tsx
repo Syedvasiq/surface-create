@@ -3,11 +3,14 @@ const benefits = [
     title: "No removal",
     description: "The floor can be restored without removal, fast and clean process.",
     icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-10 h-10">
-        <line x1="8" y1="40" x2="40" y2="8" strokeLinecap="round" />
-        <line x1="8" y1="8" x2="40" y2="40" strokeLinecap="round" />
-        <rect x="6" y="30" width="12" height="12" rx="1" />
-        <rect x="30" y="6" width="12" height="12" rx="1" />
+      // Trowel with diagonal strike-through — matches reference
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.4} className="w-10 h-10">
+        {/* Trowel blade */}
+        <path d="M10 38 L28 14 L36 10 L32 18 L10 38Z" strokeLinejoin="round" />
+        {/* Trowel handle */}
+        <line x1="28" y1="14" x2="38" y2="8" strokeLinecap="round" />
+        {/* Strike-through diagonal */}
+        <line x1="6" y1="10" x2="42" y2="40" strokeLinecap="round" strokeWidth={1.8} />
       </svg>
     ),
   },
@@ -15,14 +18,15 @@ const benefits = [
     title: "Power trowel effect",
     description: "Minimal thickness, no change in slab level.",
     icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-10 h-10">
-        <rect x="8" y="20" width="32" height="8" rx="1" />
-        <line x1="24" y1="8" x2="24" y2="20" strokeLinecap="round" />
-        <line x1="18" y1="12" x2="24" y2="8" strokeLinecap="round" />
-        <line x1="30" y1="12" x2="24" y2="8" strokeLinecap="round" />
-        <line x1="12" y1="28" x2="12" y2="38" strokeLinecap="round" />
-        <line x1="24" y1="28" x2="24" y2="38" strokeLinecap="round" />
-        <line x1="36" y1="28" x2="36" y2="38" strokeLinecap="round" />
+      // Horizontal slab with downward arrow and "3mm" label — matches reference
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.4} className="w-10 h-10">
+        {/* Top horizontal line */}
+        <line x1="6" y1="16" x2="42" y2="16" strokeLinecap="round" />
+        {/* Downward arrow from top line */}
+        <line x1="14" y1="16" x2="14" y2="30" strokeLinecap="round" />
+        <polyline points="10,26 14,31 18,26" strokeLinecap="round" strokeLinejoin="round" />
+        {/* 3mm text label */}
+        <text x="18" y="26" fontSize="7" fill="currentColor" stroke="none" fontFamily="sans-serif" fontWeight="400">3 mm</text>
       </svg>
     ),
   },
@@ -30,9 +34,20 @@ const benefits = [
     title: "Speed of laying",
     description: "Fast application process.",
     icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-10 h-10">
-        <circle cx="24" cy="24" r="16" />
-        <polyline points="24,14 24,24 32,28" strokeLinecap="round" strokeLinejoin="round" />
+      // Clock with hands — matches reference
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.4} className="w-10 h-10">
+        <circle cx="24" cy="24" r="15" />
+        {/* Hour hand pointing to ~10 */}
+        <line x1="24" y1="24" x2="16" y2="14" strokeLinecap="round" strokeWidth={1.6} />
+        {/* Minute hand pointing to ~6 */}
+        <line x1="24" y1="24" x2="24" y2="34" strokeLinecap="round" strokeWidth={1.4} />
+        {/* Center dot */}
+        <circle cx="24" cy="24" r="1.5" fill="currentColor" stroke="none" />
+        {/* Tick marks at 12, 3, 6, 9 */}
+        <line x1="24" y1="10" x2="24" y2="13" strokeLinecap="round" />
+        <line x1="38" y1="24" x2="35" y2="24" strokeLinecap="round" />
+        <line x1="24" y1="38" x2="24" y2="35" strokeLinecap="round" />
+        <line x1="10" y1="24" x2="13" y2="24" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -40,21 +55,30 @@ const benefits = [
     title: "No joints",
     description: "It can be applied without limits or interruptions, depending on the existing surface.",
     icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-10 h-10">
-        <rect x="6" y="6" width="16" height="16" rx="1" />
-        <rect x="26" y="6" width="16" height="16" rx="1" />
-        <rect x="6" y="26" width="16" height="16" rx="1" />
-        <rect x="26" y="26" width="16" height="16" rx="1" />
+      // Dotted/stippled grid — matches reference texture pattern
+      <svg viewBox="0 0 48 48" fill="currentColor" stroke="none" className="w-10 h-10">
+        {[8,14,20,26,32,38].map(x =>
+          [8,14,20,26,32,38].map(y => (
+            <circle key={`${x}-${y}`} cx={x} cy={y} r={1.2} opacity={0.5} />
+          ))
+        )}
       </svg>
     ),
   },
   {
     title: "High wear resistance",
-    description: "Alta resistenza all'usura.",
+    description: "High resistance to wear and heavy use.",
     icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-10 h-10">
-        <path d="M24 6 L38 18 L38 36 Q24 44 10 36 L10 18 Z" strokeLinejoin="round" />
-        <polyline points="17,24 22,29 31,19" strokeLinecap="round" strokeLinejoin="round" />
+      // Spiral coil / abrasion wheel — matches reference
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.4} className="w-10 h-10">
+        {/* Outer circle */}
+        <circle cx="24" cy="28" r="14" />
+        {/* Inner spiral rings */}
+        <circle cx="24" cy="28" r="9" />
+        <circle cx="24" cy="28" r="4.5" />
+        {/* Handle / stem at top */}
+        <line x1="24" y1="14" x2="24" y2="8" strokeLinecap="round" strokeWidth={1.8} />
+        <line x1="20" y1="8" x2="28" y2="8" strokeLinecap="round" />
       </svg>
     ),
   },
