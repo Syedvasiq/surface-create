@@ -13,7 +13,7 @@ const images = [
 ];
 
 export default function LixioGallery() {
-  const [visibleCount, setVisibleCount] = useState(3);
+  const [visibleCount, setVisibleCount] = useState<number | null>(null);
 
   useEffect(() => {
     const update = () => {
@@ -28,7 +28,7 @@ export default function LixioGallery() {
 
   return (
     <section className="bg-white py-12 px-0 mt-[15px] md:mx-[15px] md:[width:calc(100%-30px)]">
-      <ImageSlider images={images} visibleCount={visibleCount} />
+      {visibleCount && <ImageSlider images={images} visibleCount={visibleCount} />}
     </section>
   );
 }
