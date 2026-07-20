@@ -79,7 +79,7 @@ export default function Header() {
       <div className="mx-auto flex h-[56px] md:h-[105px] max-w-[1440px] items-center px-4 md:px-6">
 
         <Link href="/" className="mr-10 shrink-0">
-          <div className="relative h-[48px] w-[48px] md:h-[60px] md:w-[60px] lg:h-[94px] lg:w-[94px]">
+          <div className="relative h-[83px] w-[83px] md:h-[72px] md:w-[72px] lg:h-[113px] lg:w-[113px]">
             <Image
               src="/surface-crete-logo.png"
               alt="Surface Crete Logo"

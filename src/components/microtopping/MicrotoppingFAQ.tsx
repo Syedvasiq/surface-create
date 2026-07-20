@@ -101,7 +101,7 @@ export default function MicrotoppingFAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <section className="bg-[#f0ece6] px-6 pb-16 pt-12 sm:px-10 lg:px-12 lg:pb-32 lg:pt-16 md:mx-[15px] md:[width:calc(100%-30px)] mt-[15px] mb-[15px]">
+    <section className="bg-[#f0ece6] px-6 pb-16 pt-12 sm:px-10 lg:px-12 lg:pb-32 lg:pt-16 md:mx-[15px] md:[width:calc(100%-30px)] mt-0 mb-[15px]">
 
       <div className="mb-10">
         <p className="text-[11px] tracking-widest text-gray-500 uppercase mb-3">FAQ</p>
@@ -120,9 +120,9 @@ export default function MicrotoppingFAQ() {
                 className="flex w-full items-start justify-between py-5 text-left text-[15px] font-semibold leading-snug text-[#1d2830] transition-opacity hover:opacity-70"
                 aria-expanded={isOpen}
               >
-                <span>
-                  <span className="font-medium text-gray-400 mr-2">{i + 1} &ndash;</span>
-                  {faq.q}
+                <span className="flex gap-2">
+                  <span className="font-medium text-gray-400 shrink-0">{i + 1} &ndash;</span>
+                  <span>{faq.q}</span>
                 </span>
                 <span className="ml-4 mt-0.5 shrink-0 text-gray-500">
                   {isOpen ? (
@@ -138,8 +138,9 @@ export default function MicrotoppingFAQ() {
               </button>
 
               {isOpen && (
-                <div className="max-w-3xl pb-5 pr-8">
-                  <p className="text-[14px] leading-relaxed text-[#4b5359]">
+                <div className="flex gap-2 pb-5 pr-8">
+                  <span className="shrink-0 font-medium text-transparent select-none">{i + 1} &ndash;</span>
+                  <p className="text-[14px] leading-relaxed text-[#4b5359] max-w-3xl">
                     {faq.a}
                   </p>
                 </div>
