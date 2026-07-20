@@ -13,7 +13,7 @@ export default function NuvolatoHero() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/video/NUVOLATO.mp4" type="video/mp4" />
+        <source src="/video/nuvolato-hero.mp4" type="video/mp4" />
       </video>
 
       <div className="absolute inset-0 bg-black/30" />
