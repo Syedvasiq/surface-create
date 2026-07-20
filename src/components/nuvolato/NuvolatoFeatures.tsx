@@ -1,44 +1,64 @@
 "use client";
 
+import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
 
-type Swatch = { code: string; name: string; tone: string };
+type Swatch = { code: string; name: string; img: string };
+
+const BASE = "/images/nuvolato/colours";
 
 const colourFamilies: { name: string; swatches: Swatch[] }[] = [
   {
     name: "Yellow",
     swatches: [
-      ["AR-Y10", "NEUTRO", "#e4e1d7"], ["AR-Y20", "NEUTRO + TORTORA 28g", "#c5beb0"], ["AR-Y30", "NEUTRO + ARDESIA 28g", "#85867f"],
-      ["AR-Y40", "PEWTER + ARDESIA 28g", "#5d615f"], ["AR-Y50", "NEUTRO + OCRA 56g", "#ad8a40"], ["AR-Y60", "NEUTRO + CAPPUCCINO 28g", "#9e7d5d"],
-    ].map(([code, name, tone]) => ({ code, name, tone })),
+      { code: "AR-Y10", name: "Neutro", img: `${BASE}/imgi_1_AR-Y10-NEUTRO_low.jpg` },
+      { code: "AR-Y20", name: "Neutro + Tortora 28g", img: `${BASE}/imgi_2_AR-Y20-NEUTRO_TORTORA_28g_low.jpg` },
+      { code: "AR-Y30", name: "Neutro + Ardesia 28g", img: `${BASE}/imgi_3_AR-Y30-NEUTRO_ARDESIA_28g_low.jpg` },
+      { code: "AR-Y40", name: "Pewter + Ardesia 28g", img: `${BASE}/imgi_4_AR-Y40-PEWTER_ARDESIA_28g_low.jpg` },
+      { code: "AR-Y50", name: "Neutro + Ocra 56g", img: `${BASE}/imgi_5_AR-Y50-NEUTRO_OCRA-56g_low.jpg` },
+      { code: "AR-Y60", name: "Neutro + Cappuccino 28g", img: `${BASE}/imgi_6_AR-Y60-NEUTRO_CAPPUCCINO_28g_low.jpg` },
+    ],
   },
   {
     name: "Orange",
     swatches: [
-      ["AR-O10", "NEUTRO + CHOCOLATE 28g", "#745c4c"], ["AR-O20", "NEUTRO + CHARCOAL 56g", "#41413d"], ["AR-O30", "NEUTRO + CANNELLA 56g", "#aa7048"],
-      ["AR-O40", "NEUTRO + MAPPLEWOOD 28g", "#bd8a63"], ["AR-O50", "NEUTRO + BEIGE 28g", "#d2b896"],
-    ].map(([code, name, tone]) => ({ code, name, tone })),
+      { code: "AR-O10", name: "Neutro + Chocolate 28g", img: `${BASE}/imgi_7_AR-O10-NEUTRO_CHOCOLATE_28g_low.jpg` },
+      { code: "AR-O20", name: "Neutro + Charcoal 56g", img: `${BASE}/imgi_8_AR-O20-NEUTRO_CHARCOAL_56g_low.jpg` },
+      { code: "AR-O30", name: "Neutro + Cannella 56g", img: `${BASE}/imgi_9_AR-O30-NEUTRO_CANNELLA_56g_low.jpg` },
+      { code: "AR-O40", name: "Neutro + Mapplewood 28g", img: `${BASE}/imgi_10_AR-O40-NEUTRO_MAPPLEWOOD_28g_low.jpg` },
+      { code: "AR-O50", name: "Neutro + Beige 28g", img: `${BASE}/imgi_11_AR-O50-NEUTRO_BEIGE_28g_low.jpg` },
+    ],
   },
   {
     name: "Red",
     swatches: [
-      ["AR-R10", "NEUTRO + BROWN 28g", "#7e665a"], ["AR-R20", "NEUTRO + BROWN 56g", "#59483f"],
-      ["AR-R30", "NEUTRO + ROSSO MATTONE 56g", "#a75542"], ["AR-R40", "NEUTRO + ROSSO MATTONE 28g", "#c07562"],
-    ].map(([code, name, tone]) => ({ code, name, tone })),
+      { code: "AR-R10", name: "Neutro + Brown 28g", img: `${BASE}/imgi_12_AR-R10-NEUTRO_BROWN_28g_low.jpg` },
+      { code: "AR-R20", name: "Neutro + Brown 56g", img: `${BASE}/imgi_13_AR-R20-NEUTRO_BROWN_56g_low.jpg` },
+      { code: "AR-R30", name: "Neutro + Rosso Mattone 56g", img: `${BASE}/imgi_14_AR-R30-NEUTRO_ROSSO-MATTONE_56g_low.jpg` },
+      { code: "AR-R40", name: "Neutro + Rosso Mattone 28g", img: `${BASE}/imgi_15_AR-R40-NEUTRO_ROSSO-MATTONE-28g_low.jpg` },
+    ],
   },
   {
     name: "Blue",
     swatches: [
-      ["AR-B10", "NEUTRO + SMOKE 28g", "#8d9292"], ["AR-B20", "NEUTRO + GRAFITE 28g", "#4b5253"], ["AR-B30", "PEWTER + BLACK 28g", "#2f3638"],
-      ["AR-B40", "NEUTRO + BLUE 28g + OCEANO 56g", "#315f70"], ["AR-B50", "NEUTRO + OCEANO 56g", "#3c7c85"], ["AR-B60", "NEUTRO + PALE BLUE 28g", "#b3d0d5"],
-    ].map(([code, name, tone]) => ({ code, name, tone })),
+      { code: "AR-B10", name: "Neutro + Smoke 28g", img: `${BASE}/imgi_16_AR-B10-NEUTRO_SMOKE_28g_low.jpg` },
+      { code: "AR-B20", name: "Neutro + Grafite 28g", img: `${BASE}/imgi_17_AR-B20-NEUTRO_GRAFITE_28g_low.jpg` },
+      { code: "AR-B30", name: "Pewter + Black 28g", img: `${BASE}/imgi_18_AR-B30-PEWTER_BLACK_28g_low.jpg` },
+      { code: "AR-B40", name: "Neutro + Blue 28g + Oceano 56g", img: `${BASE}/imgi_19_AR-B40-NEUTRO_BLUE_28g_OCEANO_56g_low.jpg` },
+      { code: "AR-B50", name: "Neutro + Oceano 56g", img: `${BASE}/imgi_20_AR-B50-NEUTRO_OCEANO_56g_low.jpg` },
+      { code: "AR-B60", name: "Neutro + Pale Blue 28g", img: `${BASE}/imgi_21_AR-B60-NEUTRO_PALE-BLUE_28g_low.jpg` },
+    ],
   },
   {
     name: "Green",
     swatches: [
-      ["AR-G10", "NEUTRO + MARINE 28g", "#557b71"], ["AR-G20", "PEWTER", "#777a72"], ["AR-G30", "PEWTER + FORESTA 56g", "#445642"],
-      ["AR-G40", "PEWTER + MUSCHIO 56g", "#687152"], ["AR-G50", "NEUTRO + MUSCHIO 56g", "#7e895d"], ["AR-G60", "NEUTRO + PISTACCHIO 28g", "#b4c07b"],
-    ].map(([code, name, tone]) => ({ code, name, tone })),
+      { code: "AR-G10", name: "Neutro + Marine 28g", img: `${BASE}/imgi_22_AR-G10-NEUTRO_MARINE_28g_low.jpg` },
+      { code: "AR-G20", name: "Pewter", img: `${BASE}/imgi_23_AR-G20-PEWTER_low.jpg` },
+      { code: "AR-G30", name: "Pewter + Foresta 56g", img: `${BASE}/imgi_24_AR-G30-PEWTER_FORESTA_56g_low.jpg` },
+      { code: "AR-G40", name: "Pewter + Muschio 56g", img: `${BASE}/imgi_25_AR-G40-PEWTER_MUSCHIO_56g_low.jpg` },
+      { code: "AR-G50", name: "Neutro + Muschio 56g", img: `${BASE}/imgi_26_AR-G50-NEUTRO_MUSCHIO_56g_low.jpg` },
+      { code: "AR-G60", name: "Neutro + Pistacchio 28g", img: `${BASE}/imgi_27_AR-G60-NEUTRO_PISTACCHIO_28g_low.jpg` },
+    ],
   },
 ];
 
@@ -71,9 +91,9 @@ export default function NuvolatoFeatures() {
 
   return (
     <section className="mt-[15px] bg-[#f0ece6] px-6 py-16 sm:px-10 lg:px-12 lg:py-24 md:mx-[15px] md:[width:calc(100%-30px)]">
-      <div className="mx-auto max-w-[1370px]">
+      <div>
         <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#5d686b]">The colour chart</p>
-        <h2 className="mt-3 text-[32px] font-light leading-tight text-[#1d2830] sm:text-[42px]">The colours of Nuvolato Architop®</h2>
+        <h2 className="mt-3 text-[32px] font-light leading-tight text-[#1d2830] sm:text-[42px]">The colours of Nuvolato Architop</h2>
         <p className="mt-5 text-[18px] leading-[1.55] text-[#1d2830] sm:text-[21px]">Colour Hardener + Colour Pack-C</p>
 
         <div className="mt-14 space-y-14 lg:space-y-20">
@@ -86,16 +106,24 @@ export default function NuvolatoFeatures() {
                 </div>
                 {overflows[familyIndex] && (
                   <div className="hidden md:flex gap-2">
-                    <button type="button" onClick={() => scrollFamily(familyIndex, -1)} className="grid h-9 w-9 place-items-center border border-[#1d2830]/40 text-lg text-[#1d2830] transition-colors hover:bg-[#1d2830] hover:text-white" aria-label={`Show previous ${family.name} colours`}>←</button>
-                    <button type="button" onClick={() => scrollFamily(familyIndex, 1)} className="grid h-9 w-9 place-items-center border border-[#1d2830]/40 text-lg text-[#1d2830] transition-colors hover:bg-[#1d2830] hover:text-white" aria-label={`Show next ${family.name} colours`}>→</button>
+                    <button type="button" onClick={() => scrollFamily(familyIndex, -1)} className="grid h-9 w-9 place-items-center border border-[#1d2830]/40 text-lg text-[#1d2830] transition-colors hover:bg-[#1d2830] hover:text-white" aria-label={`Previous ${family.name}`}>←</button>
+                    <button type="button" onClick={() => scrollFamily(familyIndex, 1)} className="grid h-9 w-9 place-items-center border border-[#1d2830]/40 text-lg text-[#1d2830] transition-colors hover:bg-[#1d2830] hover:text-white" aria-label={`Next ${family.name}`}>→</button>
                   </div>
                 )}
               </div>
 
-              <div ref={(element) => { sliderRefs.current[familyIndex] = element; }} className="mt-5 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-3 [scrollbar-width:thin]">
+              <div ref={(el) => { sliderRefs.current[familyIndex] = el; }} className="mt-5 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-3 scrollbar-hide">
                 {family.swatches.map((swatch) => (
-                  <article key={swatch.code} className="group w-[178px] shrink-0 snap-start overflow-hidden bg-white sm:w-[205px]">
-                    <div className="aspect-[1.35/1] transition-transform duration-300 group-hover:scale-[1.03]" style={{ backgroundColor: swatch.tone }} />
+                  <article key={swatch.code} className="group w-[152px] shrink-0 snap-start overflow-hidden bg-white sm:w-[168px]">
+                    <div className="relative aspect-[1.35/1] overflow-hidden">
+                      <Image
+                        src={swatch.img}
+                        alt={swatch.code}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                        sizes="168px"
+                      />
+                    </div>
                     <div className="min-h-[74px] p-3">
                       <p className="text-xs font-semibold text-[#1d2830]">{swatch.code}</p>
                       <p className="mt-1 text-xs leading-snug text-[#596267]">{swatch.name}</p>
