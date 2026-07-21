@@ -76,10 +76,10 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white">
-      <div className="mx-auto flex h-[72px] md:h-[105px] max-w-[1440px] items-center px-4 md:px-6">
+      <div className="mx-auto flex h-[134px] md:h-[105px] max-w-[1440px] items-center px-4 md:px-6">
 
         <Link href="/" className="mr-10 shrink-0">
-          <div className="relative h-[58px] w-[58px] md:h-[72px] md:w-[72px] lg:h-[113px] lg:w-[113px]">
+          <div className="relative h-[125px] w-[125px] md:h-[72px] md:w-[72px] lg:h-[94px] lg:w-[94px]">
             <Image
               src="/surface-crete-logo.png"
               alt="Surface Crete Logo"

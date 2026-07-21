@@ -69,7 +69,7 @@ export default function MicrotoppingHow() {
                   "Sanding and cleaning of the surface",
                   "Application 1st coat of Microtopping® FC",
                   "Sanding and cleaning of the surface",
-                  "Application of protective sealer Ideal PU WB Easy",
+                  "Application of protective sealer SC PU WB Easy",
                 ],
               },
               {
@@ -78,7 +78,7 @@ export default function MicrotoppingHow() {
                   "Sanding and cleaning of the surface",
                   "Application of Microtopping® HP",
                   "Sanding and cleaning of the surface",
-                  "Application of protective sealer Ideal PU WB Easy",
+                  "Application of protective sealer SC PU WB Easy",
                 ],
               },
             ]}
@@ -104,7 +104,7 @@ export default function MicrotoppingHow() {
                   "Application of Microtopping® BC 1 coat",
                   "Application of Microtopping® HP",
                   "Application of Microtopping® FC",
-                  "Sanding and application of protective sealer Ideal PU WB Easy",
+                  "Sanding and application of protective sealer SC PU WB Easy",
                 ],
               },
             ]}
