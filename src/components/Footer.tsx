@@ -7,68 +7,57 @@ const footerColumns = [
   {
     heading: "Floors",
     links: [
-      "Solidro",
-      "Microtopping",
-      "Nuvolato Architop",
-      "Lixio",
-      "Lixio+",
-      "Acid-Stain",
-      "Stamped Concrete",
-      "Rasico",
-      "Sassoitalia Floor",
-      "Stenciltop floor",
+      { label: "Solidro", href: "/floors/solidro" },
+      { label: "Microtopping", href: "/floors/microtopping" },
+      { label: "Nuvolato Architop", href: "/floors/nuvolato-architop" },
+      { label: "Lixio", href: "/floors/lixio" },
+      { label: "Lixio+", href: "/floors/lixio-plus" },
+      { label: "Acid-Stain", href: "/floors/acid-stain" },
+      { label: "Stamped Concrete", href: "/floors/stamped-concrete" },
+      { label: "Rasico", href: "/floors/rasico" },
+      { label: "Sassoitalia Floor", href: "/floors/sassoitalia-floor" },
+      { label: "Stenciltop floor", href: "/floors/stenciltop-floor" },
     ],
   },
   {
     heading: "Walls",
     links: [
-      "Solidro",
-      "Microtopping",
-      "Concrete Optik",
-      "Purometallo",
-      "Ideal Wall",
-      "Terrae-Calce",
+      { label: "Microtopping", href: "/walls/microtopping" },
+      { label: "Concrete Optik", href: "/walls/concrete-optik" },
+      { label: "Microcement", href: "/walls/microcement" },
+      { label: "Purometallo", href: "/walls/purometallo" },
+      { label: "Terrae-Calce", href: "/walls/terrae-calce" },
     ],
   },
   {
     heading: "Solutions",
-    links: ["Indoor Applications", "Outdoor Applications", "Typologies"],
+    links: [
+      { label: "Indoor Applications", href: "/solutions#applications" },
+      { label: "Outdoor Applications", href: "/solutions#applications" },
+      { label: "Typologies", href: "/solutions#typologies" },
+    ],
   },
   {
     heading: "Renovations",
-    links: ["Indoor Renovation", "Outdoor Renovation"],
+    links: [
+      { label: "Indoor Renovation", href: "/solutions#renovation" },
+      { label: "Outdoor Renovation", href: "/solutions#renovation" },
+    ],
   },
   {
     heading: "Projects",
-    links: [],
-  },
-  {
-    heading: "Contractors Area",
-    divider: true,
     links: [
-      "Training courses",
-      "Video Tutorial",
-      "Download",
-      "Technical Documentation",
+      { label: "All Projects", href: "/projects" },
     ],
   },
   {
     heading: "Company",
     links: [
-      "Company",
-      "Showroom",
-      "Catalogues",
-      "Certified Quality",
-      "Unrepeatable Beauty",
-      "Ideal News",
-      "Contacts",
-      "FAQ",
-      "FAQ-microcement",
+      { label: "Company", href: "/company" },
+      { label: "Colours", href: "/colours" },
+      { label: "Download", href: "/download" },
+      { label: "Contacts", href: "/contacts" },
     ],
-  },
-  {
-    heading: "Colours",
-    links: ["The art of harmony", "Yellow", "Orange", "Red", "Blue", "Green"],
   },
 ];
 
@@ -155,16 +144,15 @@ export default function Footer() {
       <div className="mx-auto max-w-[1440px] border-t border-gray-600 px-6" />
 
       <div className="mx-auto max-w-[1440px] px-6 py-10">
-        <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
           {footerColumns.map((col) => (
             <div key={col.heading} className="flex flex-col gap-3">
               <h3 className="text-[13px] font-bold uppercase tracking-wide text-white">{col.heading}</h3>
-              {col.divider && <div className="mb-1 border-t border-gray-500" />}
               <ul className="flex flex-col gap-2">
                 {col.links.map((link) => (
-                  <li key={link}>
-                    <Link href="#" className="text-[13px] text-gray-400 transition-colors hover:text-white">
-                      {link}
+                  <li key={link.label}>
+                    <Link href={link.href} className="text-[13px] text-gray-400 transition-colors hover:text-white">
+                      {link.label}
                     </Link>
                   </li>
                 ))}

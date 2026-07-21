@@ -61,6 +61,7 @@ const wallsMegaMenu = [
       {
         subLabel: "INDOOR",
         items: [
+          { label: "Microcement", href: "/walls/microcement" },
           { label: "Terrae-Calce", href: "/walls/terrae-calce" },
         ],
       },
@@ -72,9 +73,7 @@ const wallsMegaMenu = [
       {
         subLabel: "INDOOR",
         items: [
-          { label: "Acid-Stain", href: "/floors/acid-stain" },
           { label: "Purometallo", href: "/walls/purometallo" },
-          { label: "Solidro", href: "/floors/solidro" },
         ],
       },
     ],
@@ -87,7 +86,6 @@ const navLinks = [
   { label: "Projects", href: "/projects" },
   { label: "Solutions", href: "/solutions" },
   { label: "Colours", href: "/colours" },
-  { label: "Contractors Area", href: "/contractors-area" },
   { label: "Company", href: "/company" },
   { label: "Download", href: "/download" },
 ];
@@ -130,7 +128,7 @@ export default function Header() {
           </div>
         </Link>
 
-        <nav className="hidden lg:flex flex-1 items-center gap-[30px] ml-[20px]">
+        <nav className="hidden lg:flex flex-1 items-center gap-[48px] ml-[28px]">
           {navLinks.map((link) =>
             link.hasMega ? (
               <div
@@ -202,9 +200,9 @@ export default function Header() {
 
       {megaOpen && (
         <div ref={megaRef} className="hidden lg:block absolute left-0 right-0 z-40 border-t border-gray-200 bg-white shadow-sm">
-          <div className="mx-auto max-w-[1440px] px-6 py-6">
-            <div className="pl-[170px]">
-              <div className="flex gap-16">
+          <div className={`mx-auto py-7 ${megaOpen === "floors" ? "max-w-[1720px] px-10" : "max-w-[1440px] px-6"}`}>
+            <div className={megaOpen === "floors" ? "pl-[100px]" : "pl-[140px]"}>
+              <div className={megaOpen === "floors" ? "flex gap-[110px]" : "flex gap-20"}>
                 {(megaOpen === "floors" ? floorsMegaMenu : wallsMegaMenu).map((group) => (
                   <div key={group.groupTitle}>
                     <div className="mb-3 flex items-center gap-3">

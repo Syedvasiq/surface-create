@@ -12,6 +12,7 @@ interface Service {
   category: string;
   heading: string;
   description: string;
+  extraLines: string[];
   subLabel: string;
   href: string;
   images: string[];
@@ -30,8 +31,13 @@ const services: Service[] = [
     heading: "Microcement Surfaces",
     description:
       "A seamless, ultra-thin coating applied over existing surfaces — no demolition, no grout lines. Ideal for floors, walls, bathrooms, kitchens and furniture across luxury homes and commercial spaces. Available in 60+ curated tones with a flawless, continuous finish.",
+    extraLines: [
+      "Applied in layers as thin as 2–3 mm, microcement adds virtually no height to existing floors or walls.",
+      "Its polymer-enhanced formula bonds directly to tiles, concrete and screed — making it the ideal renovation material.",
+      "Each surface is hand-finished and sealed, giving every project a unique, tactile quality that cannot be replicated.",
+    ],
     subLabel: "Find out more",
-    href: "/floors/microcement",
+    href: "/walls/microcement",
     images: [
       "/images/projects/luxury-villa-south-delhi/luxury-villa-south-delhi-exterior.png",
       "/images/projects/luxury-villa-south-delhi/luxury-villa-south-delhi-living-room.png",
@@ -53,8 +59,13 @@ const services: Service[] = [
     heading: "Micro Topping",
     description:
       "Breathe new life into tired surfaces without lifting a tile. Our Micro Topping system overlays existing tiles, old concrete and worn floors with a razor-thin, high-strength decorative layer. The fastest, cleanest route to a premium finish — residential or commercial.",
+    extraLines: [
+      "Available in a wide palette of mineral tones, Micro Topping delivers a consistent, joint-free finish across any surface area.",
+      "Its flexibility makes it suitable for floors, walls, staircases and wet areas including bathrooms and kitchens.",
+      "Professional application and sealing ensures long-term durability with minimal maintenance requirements.",
+    ],
     subLabel: "Find out more",
-    href: "/floors/micro-topping",
+    href: "/floors/microtopping",
     images: [
       "/images/projects/mtr eats bangalore/mtr-eats-bangalore-exterior.png",
       "/images/projects/mtr eats bangalore/mtr-eats-bangalore-interior.png",
@@ -76,8 +87,13 @@ const services: Service[] = [
     heading: "Decorative Concrete",
     description:
       "Combine the raw strength of concrete with refined architectural design. Our decorative concrete solutions cover feature walls, designer floors and bespoke architectural finishes — bringing an industrial-luxe aesthetic to both residential villas and high-end commercial projects.",
+    extraLines: [
+      "Each pour is unique — natural variation in tone and texture gives decorative concrete an organic, one-of-a-kind character.",
+      "Suitable for both indoor and outdoor applications, it performs equally well in high-traffic and exposed environments.",
+      "Custom pigments and aggregate blends allow precise control over the final aesthetic to match any design brief.",
+    ],
     subLabel: "Find out more",
-    href: "/floors/decorative-concrete",
+    href: "/floors/nuvolato-architop",
     images: [
       "/images/projects/private villa goa/private-villa-goa-exterior.png",
       "/images/projects/private villa goa/private-villa-goa-interior.png",
@@ -99,8 +115,13 @@ const services: Service[] = [
     heading: "Polished Concrete Floors",
     description:
       "Ground, honed and polished to a mirror or matte sheen, our polished concrete floors are virtually indestructible. From luxury residences and retail stores to large-scale commercial offices and warehouses — a timeless finish that only gets better with age.",
+    extraLines: [
+      "The grinding and densifying process hardens the surface at a molecular level, making it resistant to abrasion and impact.",
+      "Polished concrete reflects light beautifully, enhancing the sense of space in both compact and large-scale interiors.",
+      "Low maintenance and hygienic, it requires no wax, coatings or specialist cleaning products to retain its appearance.",
+    ],
     subLabel: "Find out more",
-    href: "/floors/polished-concrete",
+    href: "/floors/rasico",
     images: [
       "/images/projects/premium reaturant in chennai/premium-restaurant-inchennai-exterior.png",
       "/images/projects/premium reaturant in chennai/premium-restaurant-inchennai-inside.png",
@@ -119,19 +140,23 @@ const services: Service[] = [
     heading: "Textured Wall Finishes",
     description:
       "From subtle mineral textures to bold designer statements, our wall finishing systems transform any interior into a bespoke environment. Premium textures, luxury feature walls and designer accent walls — crafted for residences, hotels and high-end commercial spaces across India.",
+    extraLines: [
+      "Our range includes lime-based, mineral and polymer finishes — each with a distinct tactile quality and depth of tone.",
+      "Textured wall systems can be applied to new builds and renovation projects alike, with no structural changes required.",
+      "Every finish is breathable, low-VOC and formulated to perform in India's varied humidity and temperature conditions.",
+    ],
     subLabel: "Find out more",
     href: "/walls",
     images: [
-      "/images/services/wall-1.jpg",
-      "/images/services/wall-2.jpg",
-      "/images/services/wall-3.jpg",
-      "/images/services/wall-4.jpg",
-      "/images/services/wall-5.jpg",
+      "/images/projects/botique-hotel-mumbai-exterior.png",
+      "/images/projects/botique-hotel-mumbai-interior.png",
+      "/images/projects/botique-hotel-mumbai-room.png",
+      "/images/projects/botique-hotel-mumbai-wall.png",
     ],
     projectLabel: "Projects",
-    projectTitle: "Boutique Hotel in Mumbai",
+    projectTitle: "Boutique Hotel, Mumbai",
     productTags: [],
-    productImage: "/images/services/wall-texture.jpg",
+    productImage: "/images/projects/botique-hotel-mumbai-wall.png",
     productName: "Textured Walls",
     layout: "text-left",
   },
@@ -141,19 +166,22 @@ const services: Service[] = [
     heading: "Decorative Wall Coatings",
     description:
       "Protect and beautify interior and exterior walls with our advanced decorative coating systems. Fully waterproof, weather-resistant and available in a rich range of finishes — designed for Indian climatic conditions. A seamless upgrade for facades, outdoor walls and premium interiors.",
+    extraLines: [
+      "Our coating systems provide a continuous, crack-bridging layer that protects masonry from moisture ingress and UV damage.",
+      "Available in smooth, textured and stone-effect finishes to complement both contemporary and traditional architecture.",
+      "Suitable for exterior facades, boundary walls, feature interiors and any surface requiring long-term decorative protection.",
+    ],
     subLabel: "Find out more",
-    href: "/walls/decorative-coatings",
+    href: "/walls/concrete-optik",
     images: [
-      "/images/services/coating-1.jpg",
-      "/images/services/coating-2.jpg",
-      "/images/services/coating-3.jpg",
-      "/images/services/coating-4.jpg",
-      "/images/services/coating-5.jpg",
+      "/images/projects/hyderabad-villa-exterior.png",
+      "/images/projects/hyderabad-villa-interior.png",
+      "/images/projects/wall-coatings.png",
     ],
     projectLabel: "Projects",
     projectTitle: "Contemporary Villa in Hyderabad",
     productTags: [],
-    productImage: "/images/services/coating-texture.jpg",
+    productImage: "/images/projects/wall-coatings.png",
     productName: "Wall Coatings",
     layout: "text-right",
   },
@@ -237,9 +265,14 @@ function InfoPanel({ service }: { service: Service }) {
       <h2 className="text-[26px] sm:text-[30px] lg:text-[34px] font-light text-gray-800 leading-tight mb-4">
         {service.heading}
       </h2>
-      <p className="text-[13px] leading-relaxed text-gray-600 mb-5 line-clamp-3">
+      <p className="text-[13px] leading-relaxed text-gray-600 mb-3">
         {service.description}
       </p>
+      {service.extraLines.map((line, i) => (
+        <p key={i} className="text-[13px] leading-relaxed text-gray-500 mb-2">
+          {line}
+        </p>
+      ))}
       {service.subLabel && (
         <div className="flex items-center gap-3 mb-5">
           <Link
@@ -255,15 +288,7 @@ function InfoPanel({ service }: { service: Service }) {
           </span>
         </div>
       )}
-      <Link
-        href={service.href}
-        className="inline-flex items-center gap-2 text-[13px] font-medium text-gray-800 border border-gray-700 rounded-full px-5 py-2 w-fit hover:bg-gray-800 hover:text-white transition-colors"
-      >
-        View Projects
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-3.5 h-3.5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-        </svg>
-      </Link>
+
     </div>
   );
 }
