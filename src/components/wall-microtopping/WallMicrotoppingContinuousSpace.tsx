@@ -39,7 +39,7 @@ export default function WallMicrotoppingContinuousSpace() {
         {/* Right: Image */}
         <div className="w-full md:w-[62%] relative aspect-[4/3] md:aspect-auto md:h-[420px] lg:h-[500px] overflow-hidden">
           <Image
-            src="/images/wall-microtopping/continuous-space.jpg"
+            src="/images/microtopping-wall/continuous-space.jpg"
             alt="Microtopping wall continuous space"
             fill
             className="object-cover"

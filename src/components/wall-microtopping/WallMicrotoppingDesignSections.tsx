@@ -17,7 +17,7 @@ export default function WallMicrotoppingDesignSections() {
           </div>
         </div>
         <div className="w-full md:w-[50%] relative aspect-[4/3] md:aspect-auto md:h-[420px] lg:h-[480px] overflow-hidden shrink-0">
-          <Image src="/images/wall-microtopping/innovative-material.jpg" alt="Microtopping innovative material" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+          <Image src="/images/microtopping-wall/inovattive-material.jpg" alt="Microtopping innovative material" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
         </div>
       </div>
 
@@ -32,7 +32,7 @@ export default function WallMicrotoppingDesignSections() {
           </div>
         </div>
         <div className="w-full md:w-[50%] relative aspect-[4/3] md:aspect-auto md:h-[420px] lg:h-[480px] overflow-hidden shrink-0">
-          <Image src="/images/wall-microtopping/continuity.jpg" alt="Microtopping continuity" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+          <Image src="/images/microtopping-wall/from-continunity.jpg" alt="Microtopping continuity" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
         </div>
       </div>
 
@@ -48,7 +48,7 @@ export default function WallMicrotoppingDesignSections() {
           </div>
         </div>
         <div className="w-full md:w-[50%] relative aspect-[4/3] md:aspect-auto md:h-[420px] lg:h-[480px] overflow-hidden shrink-0">
-          <Image src="/images/wall-microtopping/colours-effects.jpg" alt="Microtopping colours and effects" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+          <Image src="/images/microtopping-wall/color-effect.jpg" alt="Microtopping colours and effects" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
         </div>
       </div>
 
