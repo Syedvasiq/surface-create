@@ -182,18 +182,18 @@ export default function WallMicrotoppingFeatures() {
     <section className="bg-[#f0ece6] px-6 py-16 sm:px-10 lg:px-12 lg:py-24 md:mx-[15px] md:[width:calc(100%-30px)] mt-[15px]">
       <div>
         <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#5d686b]">Colour Collection</p>
-        <h2 className="mt-3 text-[32px] font-light leading-tight text-[#1d2830] sm:text-[42px]">The colours of Microtopping¬</h2>
+        <h2 className="mt-3 text-[32px] font-light leading-tight text-[#1d2830] sm:text-[42px]">The colours of Microtopping?</h2>
         <div className="mt-12 space-y-14 lg:space-y-20">
           {colourFamilies.map((family, familyIndex) => (
             <section key={family.name} className="border-t border-[#1d2830]/25 pt-5">
               <div className="flex items-end justify-between gap-5">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#5d686b]">Microtopping¬</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#5d686b]">Microtopping?</p>
                   <h3 className="mt-1 text-[30px] font-light text-[#1d2830] sm:text-[36px]">{family.label}</h3>
                 </div>
                 <div className="flex gap-2">
-                    <button type="button" onClick={() => scrollFamily(familyIndex, -1)} className="grid h-9 w-9 place-items-center border border-[#1d2830]/40 text-lg text-[#1d2830] transition-colors hover:bg-[#1d2830] hover:text-white" aria-label="Previous">‚Üê</button>
-                    <button type="button" onClick={() => scrollFamily(familyIndex, 1)} className="grid h-9 w-9 place-items-center border border-[#1d2830]/40 text-lg text-[#1d2830] transition-colors hover:bg-[#1d2830] hover:text-white" aria-label="Next">‚Üí</button>
+                    <button type="button" onClick={() => scrollFamily(familyIndex, -1)} className="grid h-9 w-9 place-items-center border border-[#1d2830]/40 text-lg text-[#1d2830] transition-colors hover:bg-[#1d2830] hover:text-white" aria-label="Previous">&larr;</button>
+                    <button type="button" onClick={() => scrollFamily(familyIndex, 1)} className="grid h-9 w-9 place-items-center border border-[#1d2830]/40 text-lg text-[#1d2830] transition-colors hover:bg-[#1d2830] hover:text-white" aria-label="Next">&rarr;</button>
                   </div>
               </div>
               <div ref={(el) => { sliderRefs.current[familyIndex] = el; }} className="mt-5 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-3 scrollbar-hide">
