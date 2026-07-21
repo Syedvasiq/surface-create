@@ -11,15 +11,19 @@ export default function WallMicrotoppingContinuousSpace() {
         {/* Left: Text content */}
         <div className="w-full md:w-[38%] shrink-0 px-5 sm:px-10 lg:px-14">
           <h2 className="text-[26px] sm:text-[30px] lg:text-[36px] font-light text-gray-900 leading-snug mb-5 md:mb-6">
-            The Continuous Space of Microtopping®
+            The Continuous Space of Microtopping
           </h2>
 
           <div className="space-y-4 mb-8 md:mb-10">
             <p className="text-[14px] sm:text-[15px] text-gray-700 leading-[1.85]">
-              Ideal Work Microtopping® is perfect for those who want a continuous, innovative and tactile surface that can make any space unique, whether it is a minimal modern environment where Ideal Work Microtopping® stands out as the main feature, or a classic, rustic or vintage environment, where it completes the style with refined discretion.
+              Surface Crete Microtopping is perfect for those who want a continuous, innovative
+              and tactile surface that can make any space unique, whether it is a minimal modern
+              environment where Microtopping stands out as the main feature, or a classic, rustic
+              or vintage environment, where it completes the style with refined discretion.
             </p>
             <p className="text-[14px] sm:text-[15px] text-gray-700 leading-[1.85]">
-              You can customise Microtopping® by choosing shades and creating glossy, clouded, or acid stained effects to make it exactly the way you want it.
+              You can customise Microtopping by choosing shades and creating glossy, clouded,
+              or acid stained effects to make it exactly the way you want it.
             </p>
           </div>
 

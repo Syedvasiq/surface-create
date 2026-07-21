@@ -12,8 +12,8 @@ export default function WallMicrotoppingDesignSections() {
           <p className="text-[11px] tracking-widest text-gray-500 uppercase mb-3">Innovation</p>
           <h3 className="text-[22px] sm:text-[26px] lg:text-[30px] font-light text-gray-900 leading-snug mb-5">Innovative Material: Renew the surface in just 3 millimetres</h3>
           <div className="space-y-4">
-            <p className="text-[14px] sm:text-[15px] text-gray-700 leading-[1.85]">With just three millimetres of thickness, microcement MicrotoppingÂ® allows you to renew existing surfaces on different bases (concrete, self-levelling, ceramic, woodâ€¦) without having to remove them.</p>
-            <p className="text-[14px] sm:text-[15px] text-gray-700 leading-[1.85]">MicrotoppingÂ® is easy to clean and fast to install. It is also perfect where underfloor heating is used.</p>
+            <p className="text-[14px] sm:text-[15px] text-gray-700 leading-[1.85]">With just three millimetres of thickness, microcement MicrotoppingÂ allows you to renew existing surfaces on different bases (concrete, self-levelling, ceramic, woodâ€¦) without having to remove them.</p>
+            <p className="text-[14px] sm:text-[15px] text-gray-700 leading-[1.85]">MicrotoppingÂ is easy to clean and fast to install. It is also perfect where underfloor heating is used.</p>
           </div>
         </div>
         <div className="w-full md:w-[50%] relative aspect-[4/3] md:aspect-auto md:h-[420px] lg:h-[480px] overflow-hidden shrink-0">
@@ -27,8 +27,8 @@ export default function WallMicrotoppingDesignSections() {
           <p className="text-[11px] tracking-widest text-gray-500 uppercase mb-3">Continuity</p>
           <h3 className="text-[22px] sm:text-[26px] lg:text-[30px] font-light text-gray-900 leading-snug mb-5">From continuity to your ideas: goodbye to visible joints and interruption lines</h3>
           <div className="space-y-4">
-            <p className="text-[14px] sm:text-[15px] text-gray-700 leading-[1.85]">MicrotoppingÂ® is the ideal solution for those who do not like visible joints as it allows you to create continuous surfaces, both internally and externally, without visible joints.</p>
-            <p className="text-[14px] sm:text-[15px] text-gray-700 leading-[1.85]">Its extraordinary features make it ideal for both horizontal and vertical surfaces, such as plasterboard or masonry walls, stairs, bathrooms and shower enclosures. MicrotoppingÂ® gives space to your ideas without interrupting lines.</p>
+            <p className="text-[14px] sm:text-[15px] text-gray-700 leading-[1.85]">MicrotoppingÂ is the ideal solution for those who do not like visible joints as it allows you to create continuous surfaces, both internally and externally, without visible joints.</p>
+            <p className="text-[14px] sm:text-[15px] text-gray-700 leading-[1.85]">Its extraordinary features make it ideal for both horizontal and vertical surfaces, such as plasterboard or masonry walls, stairs, bathrooms and shower enclosures. MicrotoppingÂ gives space to your ideas without interrupting lines.</p>
           </div>
         </div>
         <div className="w-full md:w-[50%] relative aspect-[4/3] md:aspect-auto md:h-[420px] lg:h-[480px] overflow-hidden shrink-0">

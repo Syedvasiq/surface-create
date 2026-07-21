@@ -62,7 +62,6 @@ const wallsMegaMenu = [
         subLabel: "INDOOR",
         items: [
           { label: "Terrae-Calce", href: "/walls/terrae-calce" },
-          { label: "Microcement", href: "/walls/microcement" },
         ],
       },
     ],
