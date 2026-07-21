@@ -42,9 +42,49 @@ const floorsMegaMenu = [
   },
 ];
 
+const wallsMegaMenu = [
+  {
+    groupTitle: "Cement-based",
+    columns: [
+      {
+        subLabel: "INDOOR",
+        items: [
+          { label: "Microtopping", href: "/walls/microtopping" },
+          { label: "Concrete Optik", href: "/walls/concrete-optik" },
+        ],
+      },
+    ],
+  },
+  {
+    groupTitle: "Natural finishes",
+    columns: [
+      {
+        subLabel: "INDOOR",
+        items: [
+          { label: "Terrae-Calce", href: "/walls/terrae-calce" },
+          { label: "Microcement", href: "/walls/microcement" },
+        ],
+      },
+    ],
+  },
+  {
+    groupTitle: "Hybrid finishes",
+    columns: [
+      {
+        subLabel: "INDOOR",
+        items: [
+          { label: "Acid-Stain", href: "/floors/acid-stain" },
+          { label: "Purometallo", href: "/walls/purometallo" },
+          { label: "Solidro", href: "/floors/solidro" },
+        ],
+      },
+    ],
+  },
+];
+
 const navLinks = [
-  { label: "Floors", href: "/floors", hasMega: true },
-  { label: "Walls", href: "/walls" },
+  { label: "Floors", href: "/floors", hasMega: "floors" },
+  { label: "Walls", href: "/walls", hasMega: "walls" },
   { label: "Projects", href: "/projects" },
   { label: "Solutions", href: "/solutions" },
   { label: "Colours", href: "/colours" },
@@ -56,19 +96,19 @@ const navLinks = [
 export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [megaOpen, setMegaOpen] = useState(false);
-  const [mobileMegaOpen, setMobileMegaOpen] = useState(false);
+  const [megaOpen, setMegaOpen] = useState<"floors" | "walls" | null>(null);
+  const [mobileMegaOpen, setMobileMegaOpen] = useState<string | null>(null);
   const floorsRef = useRef<HTMLDivElement>(null);
+  const wallsRef = useRef<HTMLDivElement>(null);
   const megaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
-      if (
-        floorsRef.current && !floorsRef.current.contains(e.target as Node) &&
-        megaRef.current && !megaRef.current.contains(e.target as Node)
-      ) {
-        setMegaOpen(false);
-      }
+      const clickedInsideTrigger =
+        (floorsRef.current && floorsRef.current.contains(e.target as Node)) ||
+        (wallsRef.current && wallsRef.current.contains(e.target as Node));
+      const clickedInsideMega = megaRef.current && megaRef.current.contains(e.target as Node);
+      if (!clickedInsideTrigger && !clickedInsideMega) setMegaOpen(null);
     }
     if (megaOpen) document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -76,10 +116,10 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white">
-      <div className="mx-auto flex h-[95px] md:h-[105px] max-w-[1440px] items-center px-4 md:px-6">
+      <div className="mx-auto flex h-[83px] md:h-[105px] max-w-[1440px] items-center px-4 md:px-6">
 
         <Link href="/" className="mr-10 shrink-0">
-          <div className="relative h-[110px] w-[110px] md:h-[72px] md:w-[72px] lg:h-[94px] lg:w-[94px]">
+          <div className="relative h-[90px] w-[90px] md:h-[72px] md:w-[72px] lg:h-[94px] lg:w-[94px]">
             <Image
               src="/surface-crete-logo.png"
               alt="Surface Crete Logo"
@@ -94,11 +134,15 @@ export default function Header() {
         <nav className="hidden lg:flex flex-1 items-center gap-[30px] ml-[20px]">
           {navLinks.map((link) =>
             link.hasMega ? (
-              <div key={link.label} ref={floorsRef} className="relative h-full flex items-center">
+              <div
+                key={link.label}
+                ref={link.hasMega === "floors" ? floorsRef : wallsRef}
+                className="relative h-full flex items-center"
+              >
                 <button
-                  onClick={() => setMegaOpen((v) => !v)}
+                  onClick={() => setMegaOpen((v) => v === link.hasMega ? null : link.hasMega as "floors" | "walls")}
                   className={`cursor-pointer whitespace-nowrap text-[15px] font-semibold tracking-wide transition-colors ${
-                    megaOpen ? "text-gray-900" : "text-gray-800 hover:text-gray-900"
+                    megaOpen === link.hasMega ? "text-gray-900" : "text-gray-800 hover:text-gray-900"
                   }`}
                 >
                   {link.label}
@@ -162,7 +206,7 @@ export default function Header() {
           <div className="mx-auto max-w-[1440px] px-6 py-6">
             <div className="pl-[170px]">
               <div className="flex gap-16">
-                {floorsMegaMenu.map((group) => (
+                {(megaOpen === "floors" ? floorsMegaMenu : wallsMegaMenu).map((group) => (
                   <div key={group.groupTitle}>
                     <div className="mb-3 flex items-center gap-3">
                       <span className="text-[16px] font-bold text-gray-900 whitespace-nowrap">{group.groupTitle}</span>
@@ -175,7 +219,7 @@ export default function Header() {
                           <ul className="flex flex-col gap-2">
                             {col.items.map((item) => (
                               <li key={item.label}>
-                                <Link href={item.href} onClick={() => setMegaOpen(false)} className="cursor-pointer text-[14px] font-bold text-gray-700 hover:text-gray-900 transition-colors">
+                                <Link href={item.href} onClick={() => setMegaOpen(null)} className="cursor-pointer text-[14px] font-bold text-gray-700 hover:text-gray-900 transition-colors">
                                   {item.label}
                                 </Link>
                               </li>
@@ -210,17 +254,17 @@ export default function Header() {
               link.hasMega ? (
                 <div key={link.label}>
                   <button
-                    onClick={() => setMobileMegaOpen((v) => !v)}
+                    onClick={() => setMobileMegaOpen((v) => v === link.hasMega ? null : (link.hasMega as string))}
                     className="cursor-pointer w-full flex items-center justify-between py-2 text-[15px] font-normal tracking-wide border-b border-gray-100 text-gray-800"
                   >
                     {link.label}
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className={`h-4 w-4 transition-transform ${mobileMegaOpen ? "rotate-180" : ""}`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className={`h-4 w-4 transition-transform ${mobileMegaOpen === link.hasMega ? "rotate-180" : ""}`}>
                       <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
                     </svg>
                   </button>
-                  {mobileMegaOpen && (
+                  {mobileMegaOpen === link.hasMega && (
                     <div className="pl-4 pb-2 pt-1 bg-gray-50">
-                      {floorsMegaMenu.map((group) => (
+                      {(link.hasMega === "floors" ? floorsMegaMenu : wallsMegaMenu).map((group) => (
                         <div key={group.groupTitle} className="mb-3">
                           <p className="text-[12px] font-bold text-gray-700 uppercase tracking-wide mb-2">{group.groupTitle}</p>
                           {group.columns.map((col) => (
@@ -230,7 +274,7 @@ export default function Header() {
                                 <Link
                                   key={item.label}
                                   href={item.href}
-                                  onClick={() => { setMobileMegaOpen(false); setMobileMenuOpen(false); }}
+                                  onClick={() => { setMobileMegaOpen(null); setMobileMenuOpen(false); }}
                                   className="block py-1 text-[14px] text-gray-700 hover:text-gray-900"
                                 >
                                   {item.label}
